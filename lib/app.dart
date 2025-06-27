@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:iconsax/iconsax.dart';
+import 'package:smart_medication/screens/homepage/home.dart';
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
@@ -10,30 +10,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'Smart Medication',
       theme: ThemeData(primarySwatch: Colors.blue),
-      home: Scaffold(
-        appBar: AppBar(
-          leading: IconButton(
-            icon: const Icon(Iconsax.menu),
-            onPressed: () {
-              // Handle menu button press
-            },
-          ),
-          actions: [
-            IconButton(
-              icon: const Icon(Iconsax.notification),
-              onPressed: () {
-                // Handle notification button press
-              },
-            ),
-          ],
-        ),
-        body: Center(
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [],
-          ),
-        ),
-      ),
+      home: Home(),
     );
   }
 }
