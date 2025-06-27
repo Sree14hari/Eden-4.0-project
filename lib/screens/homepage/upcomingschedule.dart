@@ -21,6 +21,7 @@ class Upcomingschedule extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Padding(
                     padding: const EdgeInsets.fromLTRB(16, 20, 0, 0),
@@ -34,30 +35,14 @@ class Upcomingschedule extends StatelessWidget {
                     ),
                   ),
                   const SizedBox(height: 10),
-                  Hugecard(
-                    mname: "Paracetamol 500mg",
-                    date: "12/08/2023",
-                    time: "12:00 PM",
-                    dosage: "Dosage: 2 times a day",
-                  ),
-                  Hugecard(
-                    mname: "Paracetamol 500mg",
-                    date: "12/08/2023",
-                    time: "12:00 PM",
-                    dosage: "Dosage: 2 times a day",
-                  ),
-                  Hugecard(
-                    mname: "Paracetamol 500mg",
-                    date: "12/08/2023",
-                    time: "12:00 PM",
-                    dosage: "Dosage: 2 times a day",
-                  ),
-                  Hugecard(
-                    mname: "Paracetamol 500mg",
-                    date: "12/08/2023",
-                    time: "12:00 PM",
-                    dosage: "Dosage: 2 times a day",
-                  ),
+                  for (int i = 0; i < 5; i++) ...[
+                    Hugecard(
+                      mname: "Paracetamol 500mg",
+                      date: "${i + 1}/08/2023",
+                      time: "${i + 6}:00 PM",
+                      dosage: "Dosage: 2 times a day",
+                    ),
+                  ],
                 ],
               ),
             ],
