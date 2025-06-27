@@ -129,7 +129,7 @@ class _Homecomponent1State extends State<Homecomponent1> {
                         PageRouteBuilder(
                           pageBuilder:
                               (context, animation, secondaryAnimation) =>
-                                  const HealthStatsPageMock(),
+                                  const HealthStatsPage(),
                           transitionsBuilder:
                               (context, animation, secondaryAnimation, child) {
                                 const begin = Offset(1.0, 0.0); // Right to left

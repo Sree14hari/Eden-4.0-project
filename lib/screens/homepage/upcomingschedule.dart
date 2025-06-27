@@ -2,16 +2,28 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:smart_medication/model/medical_schedulemodel.dart';
+import 'package:smart_medication/service/notificationscheduler.dart';
 import 'package:smart_medication/widgets/hugecard.dart';
 
-class Upcomingschedule extends StatelessWidget {
+class Upcomingschedule extends StatefulWidget {
   const Upcomingschedule({super.key});
+
+  @override
+  State<Upcomingschedule> createState() => _UpcomingscheduleState();
+}
+
+class _UpcomingscheduleState extends State<Upcomingschedule> {
+  late Stream<List<MedicationModel>> _medicationsStream;
+
+  @override
+  void initState() {
+    super.initState();
+    _medicationsStream = _getMedicationsStream();
+  }
 
   Stream<List<MedicationModel>> _getMedicationsStream() {
     final userId = FirebaseAuth.instance.currentUser?.uid;
-    if (userId == null) {
-      throw Exception("User not logged in.");
-    }
+    if (userId == null) throw Exception("User not logged in.");
 
     return FirebaseFirestore.instance
         .collection('medications')
@@ -34,6 +46,24 @@ class Upcomingschedule extends StatelessWidget {
         );
   }
 
+  void _scheduleAllNotifications(List<MedicationModel> meds) {
+    for (final med in meds) {
+      try {
+        final timeParts = med.time.split(':');
+        final hour = int.tryParse(timeParts[0]) ?? 0;
+        final minute = int.tryParse(timeParts[1]) ?? 0;
+
+        scheduleMedicationNotification(
+          medName: med.name,
+          dosage: med.dosage,
+          time: TimeOfDay(hour: hour, minute: minute),
+        );
+      } catch (e) {
+        debugPrint('❌ Notification error for ${med.name}: $e');
+      }
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     return Expanded(
@@ -44,7 +74,7 @@ class Upcomingschedule extends StatelessWidget {
           borderRadius: BorderRadius.all(Radius.circular(20)),
         ),
         child: StreamBuilder<List<MedicationModel>>(
-          stream: _getMedicationsStream(),
+          stream: _medicationsStream,
           builder: (context, snapshot) {
             if (snapshot.connectionState == ConnectionState.waiting) {
               return const Center(child: CircularProgressIndicator());
@@ -57,6 +87,11 @@ class Upcomingschedule extends StatelessWidget {
             }
 
             final meds = snapshot.data!;
+
+            // ✅ Schedule only once after fetching data
+            WidgetsBinding.instance.addPostFrameCallback((_) {
+              _scheduleAllNotifications(meds);
+            });
 
             return SingleChildScrollView(
               child: Column(

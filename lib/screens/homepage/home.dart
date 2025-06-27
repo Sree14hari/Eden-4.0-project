@@ -3,6 +3,7 @@ import 'package:iconsax/iconsax.dart';
 import 'package:flutter_advanced_drawer/flutter_advanced_drawer.dart';
 import 'package:smart_medication/screens/healthpage/healthpage.dart';
 import 'package:smart_medication/screens/homepage/homecomponent1.dart';
+import 'package:smart_medication/screens/notificationpage.dart';
 import 'package:smart_medication/screens/shedule%20page/schedulepage.dart';
 
 class Home extends StatefulWidget {
@@ -81,7 +82,7 @@ class _HomeState extends State<Home> {
                     Navigator.of(context).push(
                       PageRouteBuilder(
                         pageBuilder: (context, animation, secondaryAnimation) =>
-                            const HealthStatsPageMock(),
+                            const HealthStatsPage(),
                         transitionsBuilder:
                             (context, animation, secondaryAnimation, child) {
                               const begin = Offset(1.0, 0.0); // Right to left
@@ -170,6 +171,29 @@ class _HomeState extends State<Home> {
               icon: const Icon(Iconsax.notification, color: Colors.white),
               onPressed: () {
                 // Handle notification button press
+                Navigator.of(context).push(
+                  PageRouteBuilder(
+                    pageBuilder: (context, animation, secondaryAnimation) =>
+                        const NotificationPage(),
+                    transitionsBuilder:
+                        (context, animation, secondaryAnimation, child) {
+                          const begin = Offset(1.0, 0.0); // Right to left
+                          const end = Offset.zero;
+                          const curve = Curves.ease;
+
+                          final tween = Tween(
+                            begin: begin,
+                            end: end,
+                          ).chain(CurveTween(curve: curve));
+
+                          return SlideTransition(
+                            position: animation.drive(tween),
+                            child: child,
+                          );
+                        },
+                    transitionDuration: const Duration(milliseconds: 400),
+                  ),
+                );
               },
             ),
           ],
