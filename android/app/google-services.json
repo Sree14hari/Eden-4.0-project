@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "875098920573",
+    "project_id": "minnu-5b0a8",
+    "storage_bucket": "minnu-5b0a8.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:875098920573:android:f4ffb3fca5b3c839e88314",
+        "android_client_info": {
+          "package_name": "com.example.smart_medication"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCsFMz_0HfA_lX4Nw_CguCNEKcYKa_f1Pk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

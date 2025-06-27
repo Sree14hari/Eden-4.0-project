@@ -1,15 +1,26 @@
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart'; // Add this import
+import 'package:flutter/services.dart';
 import 'package:smart_medication/app.dart';
+import 'package:smart_medication/firebase_options.dart';
 
-void main() {
-  // Make the status bar transparent
-  SystemChrome.setSystemUIOverlayStyle(
-    const SystemUiOverlayStyle(
-      statusBarColor: Colors.transparent, // Transparent status bar
-      statusBarIconBrightness:
-          Brightness.dark, // Use dark icons if your background is light
-    ),
-  );
-  runApp(const MyApp());
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+
+  try {
+    await Firebase.initializeApp(
+      options: DefaultFirebaseOptions.currentPlatform,
+    );
+
+    SystemChrome.setSystemUIOverlayStyle(
+      const SystemUiOverlayStyle(
+        statusBarColor: Colors.transparent,
+        statusBarIconBrightness: Brightness.dark,
+      ),
+    );
+
+    runApp(const MyApp());
+  } catch (e) {
+    runApp(MyApp());
+  }
 }
