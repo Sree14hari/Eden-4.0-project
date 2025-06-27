@@ -56,7 +56,7 @@ class _SchedulepageState extends State<Schedulepage> {
         title: const Text(
           "Medicine Schedule",
           style: TextStyle(
-            fontFamily: "Poppins",
+            fontFamily: "Poppins bold",
             fontSize: 21,
             color: Colors.white,
           ),

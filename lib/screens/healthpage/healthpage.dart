@@ -8,7 +8,14 @@ class HealthStatsPageMock extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('🧠 Health Stats'),
+        title: const Text(
+          'Health Stats',
+          style: TextStyle(
+            fontFamily: "Poppins Bold",
+            fontSize: 20,
+            color: Colors.white,
+          ),
+        ),
         backgroundColor: Colors.blue.shade700,
       ),
       body: Padding(

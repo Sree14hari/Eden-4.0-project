@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:smart_medication/screens/healthpage/healthpage.dart';
 import 'package:smart_medication/screens/homepage/upcomingschedule.dart';
 import 'package:smart_medication/screens/shedule%20page/schedulepage.dart';
-import 'package:smart_medication/screens/sos/sospage.dart';
+import 'package:smart_medication/screens/sos/sostap.dart';
 import 'package:smart_medication/widgets/cardview.dart';
 
 class Homecomponent1 extends StatefulWidget {
@@ -97,7 +97,7 @@ class _Homecomponent1State extends State<Homecomponent1> {
                         PageRouteBuilder(
                           pageBuilder:
                               (context, animation, secondaryAnimation) =>
-                                  const Sospage(),
+                                  const SosTapScreen(),
                           transitionsBuilder:
                               (context, animation, secondaryAnimation, child) {
                                 const begin = Offset(1.0, 0.0); // Right to left
