@@ -1,6 +1,7 @@
 // ignore_for_file: deprecated_member_use
 
 import 'package:flutter/material.dart';
+import 'package:smart_medication/screens/healthpage/healthpage.dart';
 import 'package:smart_medication/screens/homepage/upcomingschedule.dart';
 import 'package:smart_medication/screens/shedule%20page/schedulepage.dart';
 import 'package:smart_medication/screens/sos/sospage.dart';
@@ -122,9 +123,37 @@ class _Homecomponent1State extends State<Homecomponent1> {
                       title: "Emergency",
                     ),
                   ),
-                  Cardview(
-                    iconpath: "assets/images/stats.png",
-                    title: "Health",
+                  GestureDetector(
+                    onTap: () {
+                      Navigator.of(context).push(
+                        PageRouteBuilder(
+                          pageBuilder:
+                              (context, animation, secondaryAnimation) =>
+                                  const HealthStatsPageMock(),
+                          transitionsBuilder:
+                              (context, animation, secondaryAnimation, child) {
+                                const begin = Offset(1.0, 0.0); // Right to left
+                                const end = Offset.zero;
+                                const curve = Curves.ease;
+
+                                final tween = Tween(
+                                  begin: begin,
+                                  end: end,
+                                ).chain(CurveTween(curve: curve));
+
+                                return SlideTransition(
+                                  position: animation.drive(tween),
+                                  child: child,
+                                );
+                              },
+                          transitionDuration: const Duration(milliseconds: 400),
+                        ),
+                      );
+                    },
+                    child: Cardview(
+                      iconpath: "assets/images/stats.png",
+                      title: "Health",
+                    ),
                   ),
                 ],
               ),

@@ -11,10 +11,7 @@ class Upcomingschedule extends StatelessWidget {
         width: double.infinity,
         decoration: BoxDecoration(
           color: Colors.white,
-          borderRadius: BorderRadius.only(
-            topLeft: Radius.circular(20),
-            topRight: Radius.circular(20),
-          ),
+          borderRadius: BorderRadius.all(Radius.circular(20)),
         ),
         child: SingleChildScrollView(
           child: Column(
