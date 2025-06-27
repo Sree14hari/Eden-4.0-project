@@ -15,6 +15,7 @@ class _HomeState extends State<Home> {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Color(0XFF5E96F3),
+        surfaceTintColor: Color(0XFF5E96F3),
         leading: IconButton(
           icon: const Icon(Iconsax.menu, color: Colors.white),
           onPressed: () {

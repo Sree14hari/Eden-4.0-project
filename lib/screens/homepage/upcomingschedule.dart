@@ -16,23 +16,52 @@ class Upcomingschedule extends StatelessWidget {
             topRight: Radius.circular(20),
           ),
         ),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Padding(
-              padding: const EdgeInsets.fromLTRB(16, 20, 0, 0),
-              child: Text(
-                "Upcoming Schedule",
-                style: TextStyle(
-                  fontSize: 21,
-                  fontFamily: "Poppins bold",
-                  color: Colors.black,
-                ),
+        child: SingleChildScrollView(
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Column(
+                children: [
+                  Padding(
+                    padding: const EdgeInsets.fromLTRB(16, 20, 0, 0),
+                    child: Text(
+                      "Upcoming Schedule",
+                      style: TextStyle(
+                        fontSize: 21,
+                        fontFamily: "Poppins bold",
+                        color: Colors.black,
+                      ),
+                    ),
+                  ),
+                  const SizedBox(height: 10),
+                  Hugecard(
+                    mname: "Paracetamol 500mg",
+                    date: "12/08/2023",
+                    time: "12:00 PM",
+                    dosage: "Dosage: 2 times a day",
+                  ),
+                  Hugecard(
+                    mname: "Paracetamol 500mg",
+                    date: "12/08/2023",
+                    time: "12:00 PM",
+                    dosage: "Dosage: 2 times a day",
+                  ),
+                  Hugecard(
+                    mname: "Paracetamol 500mg",
+                    date: "12/08/2023",
+                    time: "12:00 PM",
+                    dosage: "Dosage: 2 times a day",
+                  ),
+                  Hugecard(
+                    mname: "Paracetamol 500mg",
+                    date: "12/08/2023",
+                    time: "12:00 PM",
+                    dosage: "Dosage: 2 times a day",
+                  ),
+                ],
               ),
-            ),
-            const SizedBox(height: 10),
-            Hugecard(title: "title"),
-          ],
+            ],
+          ),
         ),
       ),
     );
