@@ -19,11 +19,11 @@ Elderly individuals often miss or take the wrong medication, which can lead to s
 - 📅 **Medication Scheduler** – Set medicine name, dose, time, and frequency
 - 🔔 **Smart Reminders** – Text and voice notifications at the right time
 - ✅ **Medication Tracking** – Users confirm doses taken or missed
-- 📊 **Compliance Dashboard** – Shows adherence trends and logs
+- 📊 **Compliance Dashboard** – Shows adherence trends and logs {FUTURE RELEASE}
 - 📤 **Caregiver Alerts** – Notifies caregivers if doses are missed
 - 🗣️ **Text-to-Speech** – Voice reminders for enhanced accessibility
-- 🧠 **(Optional)** AI Assistant for medication-related questions
-- 📄 **PDF Reports** – Generate weekly/monthly logs
+- 📄 **PDF Reports** – Generate weekly/monthly logs {FUTURE RELEASE}
+
 
 ---
 
@@ -35,21 +35,47 @@ Elderly individuals often miss or take the wrong medication, which can lead to s
 | Backend    | Firebase Firestore, Firebase Auth |
 | Notifications | flutter_local_notifications, Firebase Cloud Messaging |
 | Voice      | flutter_tts         |
-| State Mgmt | Provider / Riverpod |
+| State Mgmt | Sharedpref/Local state |
 | Charts     | fl_chart            |
-| AI (Bonus) | Gemini / ChatGPT API |
-| Alerts     | Twilio / EmailJS (optional) |
+| Alerts     | Firebase |
 
 ---
 
 ## 📁 Folder Structure
 
 ```bash
-/lib
-  ├── main.dart
-  ├── screens/
-  ├── services/
-  ├── models/
-  ├── widgets/
-  ├── providers/
-  └── utils/
+lib/
+├── 📁 model
+│   └── medical_schedulemodel.dart
+│
+├── 📁 screens
+│   ├── 📁 healthpage
+│   │   └── healthpage.dart
+│   │
+│   ├── 📁 homepage
+│   │   ├── home.dart
+│   │   ├── homecomponent1.dart
+│   │   └── upcomingschedule.dart
+│   │
+│   ├── 📁 loginpage
+│   │   └── loginpage.dart
+│   │
+│   ├── 📁 shedule page
+│   │   └── schedulepage.dart
+│   │
+│   └── 📁 sos
+│       ├── sostap.dart
+│       └── notificationpage.dart
+│
+├── 📁 service
+│   ├── notificationscheduler.dart
+│   ├── scheduleservice.dart
+│   ├── storenotification.dart
+│   └── talkback.dart
+│
+├── 📁 widgets
+│   └── (common reusable widgets)
+│
+├── app.dart
+├── firebase_options.dart
+└── main.dart
