@@ -42,40 +42,60 @@ Elderly individuals often miss or take the wrong medication, which can lead to s
 ---
 
 ## 📁 Folder Structure
-
+```bash
 lib/
-├── 📁 model
+├── model/
 │   └── medical_schedulemodel.dart
 │
-├── 📁 screens
-│   ├── 📁 healthpage
+├── screens/
+│   ├── healthpage/
 │   │   └── healthpage.dart
 │   │
-│   ├── 📁 homepage
+│   ├── homepage/
 │   │   ├── home.dart
 │   │   ├── homecomponent1.dart
 │   │   └── upcomingschedule.dart
 │   │
-│   ├── 📁 loginpage
+│   ├── loginpage/
 │   │   └── loginpage.dart
 │   │
-│   ├── 📁 shedule page
+│   ├── shedule page/
 │   │   └── schedulepage.dart
 │   │
-│   └── 📁 sos
+│   └── sos/
 │       ├── sostap.dart
 │       └── notificationpage.dart
 │
-├── 📁 service
+├── service/
 │   ├── notificationscheduler.dart
 │   ├── scheduleservice.dart
 │   ├── storenotification.dart
 │   └── talkback.dart
 │
-├── 📁 widgets
-│   └── (common reusable widgets)
+├── widgets/
 │
 ├── app.dart
 ├── firebase_options.dart
 └── main.dart
+```
+
+## 👾 Archetecture Diagram
+
+
+## ✨ Usage
+# 1. Clone the repository
+git clone https://github.com/your-username/your-flutter-app.git
+cd your-flutter-app
+
+# 2. Get the Flutter packages
+flutter pub get
+
+# 3. Run the app on a connected device or emulator
+flutter run
+
+## 🛠 Requirements
+-Flutter SDK (3.x recommended)
+-Dart SDK
+-Firebase project (for firebase_options.dart)
+-Device/emulator for running the app
 
