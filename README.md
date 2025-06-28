@@ -83,19 +83,27 @@ lib/
 
 
 ## ✨ Usage
-# 1. Clone the repository
+
+1. Clone the repository
+```
 git clone https://github.com/your-username/your-flutter-app.git
 cd your-flutter-app
-
-# 2. Get the Flutter packages
+```
+2. Get the Flutter packages
+```
 flutter pub get
-
-# 3. Run the app on a connected device or emulator
+```
+3. Run the app on a connected device or emulator
+```
 flutter run
+```
 
 ## 🛠 Requirements
 -Flutter SDK (3.x recommended)
+
 -Dart SDK
+
 -Firebase project (for firebase_options.dart)
+
 -Device/emulator for running the app
 
