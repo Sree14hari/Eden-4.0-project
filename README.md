@@ -79,8 +79,6 @@ lib/
 └── main.dart
 ```
 
-## 👾 Archetecture Diagram
-
 
 ## ✨ Usage
 
