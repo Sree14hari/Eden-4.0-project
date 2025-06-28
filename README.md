@@ -97,6 +97,8 @@ flutter pub get
 ```
 flutter run
 ```
+## 👀Ui
+![medi](https://github.com/user-attachments/assets/01d529c9-529d-4968-a5e9-4f7d5ee53273)
 
 ## 🛠 Requirements
 - Flutter SDK (3.x recommended)
