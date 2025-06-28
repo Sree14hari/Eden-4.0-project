@@ -107,4 +107,5 @@ flutter run
 - Device/emulator for running the app
 
 ## 🎚️ Hardware Diagram
-![WhatsApp Image 2025-06-28 at 09 08 37_740b9f0a](https://github.com/user-attachments/assets/d04e4ccf-8113-4908-a63f-19328e6252dd)
+![circuit_image(pill dispenser)](https://github.com/user-attachments/assets/65675ac5-b2e9-4e2a-847c-d81c5ff94270)
+
