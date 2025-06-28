@@ -3,6 +3,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:smart_medication/model/medical_schedulemodel.dart';
 import 'package:smart_medication/service/notificationscheduler.dart';
+import 'package:smart_medication/service/talkback.dart';
 import 'package:smart_medication/widgets/hugecard.dart';
 
 class Upcomingschedule extends StatefulWidget {
@@ -118,6 +119,7 @@ class _UpcomingscheduleState extends State<Upcomingschedule> {
                           "Status: ${med.status}, Frequency: ${med.frequency}",
                       status: med.status,
                       onDone: () {
+                        speak("Medicine ${med.name} has Taken.");
                         FirebaseFirestore.instance
                             .collection('medications')
                             .doc(med.id)
