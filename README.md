@@ -43,7 +43,6 @@ Elderly individuals often miss or take the wrong medication, which can lead to s
 
 ## 📁 Folder Structure
 
-```bash
 lib/
 ├── 📁 model
 │   └── medical_schedulemodel.dart
@@ -79,3 +78,4 @@ lib/
 ├── app.dart
 ├── firebase_options.dart
 └── main.dart
+
