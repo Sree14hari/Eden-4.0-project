@@ -1,3 +1,5 @@
+![image](https://github.com/user-attachments/assets/e002bf10-7307-4615-9324-13f0ac898e82)
+
 # 💊 Smart Medication Assistant for Seniors
 
 A Flutter-based app designed to help elderly individuals take their medications on time with the help of reminders, visual confirmation, and real-time caregiver alerts. Built with Firebase for real-time data sync and notification support.
@@ -97,11 +99,10 @@ flutter run
 ```
 
 ## 🛠 Requirements
--Flutter SDK (3.x recommended)
+- Flutter SDK (3.x recommended)
+- Dart SDK
+- Firebase project (for firebase_options.dart)
+- Device/emulator for running the app
 
--Dart SDK
-
--Firebase project (for firebase_options.dart)
-
--Device/emulator for running the app
-
+## 🎚️ Hardware Diagram
+![WhatsApp Image 2025-06-28 at 09 08 37_740b9f0a](https://github.com/user-attachments/assets/d04e4ccf-8113-4908-a63f-19328e6252dd)
