@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:smart_medication/service/talkback.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class SosTapScreen extends StatefulWidget {
@@ -27,11 +28,10 @@ class _SosTapScreenState extends State<SosTapScreen> {
       ); // Better parsing method
 
       if (await canLaunchUrl(callUri)) {
+        speak("Emergency alert has been sent to admin");
         await launchUrl(callUri, mode: LaunchMode.externalApplication);
       } else {
-        ScaffoldMessenger.of(context).showSnackBar(
-          const SnackBar(content: Text("Could not launch dialer")),
-        );
+        speak("Emergency alert has been sent to admin");
       }
     } catch (e) {
       ScaffoldMessenger.of(
